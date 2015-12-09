@@ -1,2 +1,5 @@
 # FLS
 FocalLengthStatics
+
+# License
+MIT
