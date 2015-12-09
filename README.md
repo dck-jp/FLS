@@ -5,6 +5,11 @@ For more details refer to  http://apps.clockahead.com/fls/
 # License
 This library is under the MIT License.
 
+# Tool using inside
+[Exiv2](http://www.exiv2.org/)
+> GNU General Public License
+> Copyright © 2004 - 2015 Andreas Huggel
+
 # Library using
 [MetroFramework](https://github.com/dennismagno/metroframework-modern-ui)
 > The MIT License (MIT)
