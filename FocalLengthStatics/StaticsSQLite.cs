@@ -62,6 +62,8 @@ namespace FocalLengthStatics
                     }
                 }
             });
+
+            
         }
 
         private Exif ParseExif(string exiv2Output)
@@ -112,11 +114,35 @@ namespace FocalLengthStatics
                     exif.FocalLength = double.Parse(value.Replace(" mm", ""));
                     break;
 
-                case "Exif.PentaxDng.LensType":
+                case "Exif.PentaxDng.LensType": 
                     exif.LensType = value;
                     break;
 
                 case "Exif.Pentax.LensType":
+                    exif.LensType = value;
+                    break;
+
+                case "Exif.Canon.LensModel": // CANON .CR2
+                    exif.LensType = value;
+                    break;
+
+                case "Exif.CanonCs.LensType": //CANON .CRW ...  old format
+                    exif.LensType = value;
+                    break;
+
+                case "Exif.Photo.LensModel": //Fujifilm .RAF
+                    exif.LensType = value;
+                    break;
+
+                case "Exif.Nikon3.Lens": //Nikon .NEF
+                    exif.LensType = value;
+                    break;
+
+                case "Exif.OlympusEq.LensType": //Olympus .ORF
+                    exif.LensType = value;
+                    break;
+
+                case "Exif.Sony1.LensID": //SONY .ARW
                     exif.LensType = value;
                     break;
 

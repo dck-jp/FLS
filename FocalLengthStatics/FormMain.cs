@@ -65,7 +65,9 @@ namespace FocalLengthStatics
             Core.Config.SearchDirectoryPath = textBoxSearchDirectory.Text;
             Core.Config.SQLiteOutputPath = textBoxCSVFile.Text;
 
-            var checkboxes = new[] { checkBox1, checkBox2, checkBox3, checkBox4 };
+            var checkboxes = new[] { checkBox1, checkBox2, checkBox3, checkBox4,
+                                    checkBox5, checkBox6, checkBox7, checkBox8,
+                                    checkBox9, checkBox10, checkBox11};
             var exts = checkboxes.Where(x => x.Checked)
                                  .Select(x => x.Text);
             Core.Config.SearchExtensions = exts.ToList();
