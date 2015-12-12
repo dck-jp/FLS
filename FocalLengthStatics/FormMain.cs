@@ -84,6 +84,8 @@ namespace FocalLengthStatics
 
             var cameras = new List<string>();
             var lenses = new List<string>();
+            listBoxBody.Items.Clear();
+            listBoxLensType.Items.Clear();
 
             SetConfig();
             if (!File.Exists(Core.Config.SQLiteOutputPath)) { return; }
