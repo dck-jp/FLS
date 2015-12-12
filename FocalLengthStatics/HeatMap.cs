@@ -12,6 +12,7 @@ namespace FocalLengthStatics
     public class HeatMap
     {
         public string OutputFileName { get; set; }
+        public bool EnableLogScale { get; set; } //撮影枚数を対数表示にする
 
         /// <summary>
         /// /// heat map表示用CSVファイルを作成する
@@ -73,12 +74,20 @@ namespace FocalLengthStatics
         /// <param name="data1Month"></param>
         private string Create1MonthData(int fRangeBegin, int fRangeEnd, Exif[] data1Month)
         {
-            var countList = new List<int>();
+            var countList = new List<double>(); //対数表示の際、値が小数になるため
             for (int f = fRangeBegin; f < fRangeEnd; f++)
             {
-                var count = data1Month.Where(exif => exif.FocalLength35mmEq >= f && exif.FocalLength35mmEq < f + 1)
+                var count = data1Month.Where(exif => exif.FocalLength35mmEq >= f 
+                                                && exif.FocalLength35mmEq < f + 1)
                                       .Count();
-                countList.Add(count);
+                if (EnableLogScale)
+                {
+                    countList.Add( Math.Log10(count + double.Epsilon));
+                }
+                else
+                {
+                    countList.Add(count);
+                }
             }
             return string.Join(",", countList);
         }

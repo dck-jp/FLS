@@ -67,7 +67,7 @@ namespace FocalLengthStatics
 
             var checkboxes = new[] { checkBox1, checkBox2, checkBox3, checkBox4,
                                     checkBox5, checkBox6, checkBox7, checkBox8,
-                                    checkBox9, checkBox10, checkBox11};
+                                    checkBox9, checkBox10, checkBoxEnableLogScale};
             var exts = checkboxes.Where(x => x.Checked)
                                  .Select(x => x.Text);
             Core.Config.SearchExtensions = exts.ToList();
@@ -143,6 +143,7 @@ namespace FocalLengthStatics
                 image = await Task.Run(() =>
                 {
                     var map = new HeatMap();
+                    map.EnableLogScale = checkBoxEnableLogScale.Checked;
                     map.CreateCSVByModels(@"heatmap.csv", cameraList, DateBegin, DateEnd, FLbegin, FLend);
                     return map.CreateImage();
                 });
