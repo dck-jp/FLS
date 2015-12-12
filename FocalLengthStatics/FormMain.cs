@@ -128,17 +128,26 @@ namespace FocalLengthStatics
         {
             var FLbegin = (int)numericUpDownFlBegin.Value;
             var FLend = (int)numericUpDownFlEnd.Value;
+
             var t1 = dateTimePickerBegin.Value;
             var DateBegin = new DateTime(t1.Year, t1.Month, 1);
             var t2 = dateTimePickerEnd.Value;
-            var DateEnd = new DateTime(t2.Year, t2.Month, 1);
+            var DateEnd = new DateTime(t2.Year, t2.Month, 1).AddMonths(1).AddDays(-1);
+            if (DateBegin > DateEnd) {
+                MessageBox.Show("Please input valid date range.");
+                return;
+            }
+
             Bitmap image;
             var heatmapTitle = "";
 
             if (radioButtonByModels.Checked)
             {
                 var cameraList = listBoxBody.SelectedItems.Cast<string>().ToList();
-                if (!cameraList.Any()) { return; }
+                if (!cameraList.Any()) {
+                    MessageBox.Show("Please select camera bodies.");
+                    return;
+                }
 
                 heatmapTitle = string.Join(",", cameraList);
 
@@ -152,8 +161,12 @@ namespace FocalLengthStatics
             }
             else if (radioButtonByLensType.Checked)
             {
+                if (listBoxLensType.SelectedItem == null)
+                {
+                    MessageBox.Show("Please select a lens.");
+                    return;
+                }
                 var lenstype = listBoxLensType.SelectedItem.ToString();
-                if (!lenstype.Any()) { return; }
 
                 heatmapTitle = lenstype;
 
