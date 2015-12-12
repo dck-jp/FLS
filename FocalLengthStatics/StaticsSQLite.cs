@@ -63,7 +63,7 @@ namespace FocalLengthStatics
                 }
             });
 
-            
+            if (exifs.Count > 0) { sqlite.Write(exifs); }
         }
 
         private Exif ParseExif(string exiv2Output)
