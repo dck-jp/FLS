@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace FocalLengthStatics.Properties
+namespace FocalLengthStatistics.Properties
 {
 
 

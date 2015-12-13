@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace FocalLengthStatics
+namespace FocalLengthStatistics
 {
     partial class FormHeatmap
     {
@@ -161,7 +161,7 @@ namespace FocalLengthStatics
             this.Name = "FormHeatmap";
             this.Resizable = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
-            this.Text = "Statics";
+            this.Text = "Statistics";
             this.TopMost = true;
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxColorBar)).EndInit();

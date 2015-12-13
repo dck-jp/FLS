@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace FocalLengthStatics
+namespace FocalLengthStatistics
 {
     internal static class Program
     {

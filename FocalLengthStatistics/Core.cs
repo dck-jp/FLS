@@ -1,4 +1,4 @@
-﻿namespace FocalLengthStatics
+﻿namespace FocalLengthStatistics
 {
     public static class Core
     {

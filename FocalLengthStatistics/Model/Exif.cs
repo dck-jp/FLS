@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace FocalLengthStatics.Model
+namespace FocalLengthStatistics.Model
 {
     public class Exif
     {

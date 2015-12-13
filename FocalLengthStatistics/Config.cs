@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace FocalLengthStatics
+namespace FocalLengthStatistics
 {
     public class Config
     {

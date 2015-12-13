@@ -1,15 +1,15 @@
 ﻿using Dapper;
-using FocalLengthStatics.Model;
+using FocalLengthStatistics.Model;
 using System.Collections.Generic;
 using System.Data.SQLite;
 using System.IO;
 
-namespace FocalLengthStatics
+namespace FocalLengthStatistics
 {
     public class SQLiteManager
     {
-        private static readonly string DBFileName = "statics.db";
-        private static readonly string TableName = "statics";
+        private static readonly string DBFileName = "Statistics.db";
+        private static readonly string TableName = "Statistics";
 
         public SQLiteManager()
         {

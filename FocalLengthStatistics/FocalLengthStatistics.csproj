@@ -142,9 +142,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="CodeD.Data.ZMappingData.dll">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    <Content Include="CodeD.Data.ZMappingData.dll" />
     <Content Include="Exiv2\exiv2.exe">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
