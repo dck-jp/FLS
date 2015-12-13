@@ -81,14 +81,22 @@ namespace FocalLengthStatistics
         private async void buttonExtractInfo_Click(object sender, EventArgs e)
         {
             groupBoxCreateHeatmap.Enabled = groupBox2.Enabled = groupBox3.Enabled = false;
-
-            var cameras = new List<string>();
-            var lenses = new List<string>();
             listBoxBody.Items.Clear();
             listBoxLensType.Items.Clear();
 
+            await ExtractBodyAndLensInfo();
+            groupBoxCreateHeatmap.Enabled = groupBox2.Enabled = groupBox3.Enabled = true;
+        }
+
+        private async Task ExtractBodyAndLensInfo()
+        {
+            var cameras = new List<string>();
+            var lenses = new List<string>();
             SetConfig();
-            if (!File.Exists(Core.Config.SQLiteOutputPath)) { return; }
+            if (!File.Exists(Core.Config.SQLiteOutputPath)) {
+                MessageBox.Show("Please create DataBase");
+                return;
+            }
 
             await Task.Run(() =>
             {
@@ -107,7 +115,6 @@ namespace FocalLengthStatistics
                 listBoxBody.Items.AddRange(cameras.ToArray());
                 listBoxLensType.Items.AddRange(lenses.ToArray());
             }
-            groupBoxCreateHeatmap.Enabled = groupBox2.Enabled = groupBox3.Enabled = true;
         }
 
         /// <summary>
