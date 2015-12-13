@@ -1,5 +1,5 @@
 # FLS
-FocalLengthStatics
+FocalLengthStatistics
 For more details refer to  http://apps.clockahead.com/fls/
 
 # License
