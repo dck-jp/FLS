@@ -1,6 +1,9 @@
 # FLS
-FocalLengthStatistics
-For more details refer to  http://apps.clockahead.com/fls/
+FLS is an abbreviation for FocalLengthStatistics.
+For more details refer to [official site](http://apps.clockahead.com/fls/).
+
+# Usage
+refer to [blog](http://apps.clockahead.com/2015/12/11/focal-length-statistics%E3%81%AE%E4%BD%BF%E3%81%84%E3%81%8B%E3%81%9F/)
 
 # License
 This library is under the MIT License.
