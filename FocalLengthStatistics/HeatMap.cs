@@ -82,7 +82,7 @@ namespace FocalLengthStatistics
                                       .Count();
                 if (EnableLogScale)
                 {
-                    countList.Add( Math.Log10(count + double.Epsilon));
+                    countList.Add( Math.Log(count + 1));
                 }
                 else
                 {
